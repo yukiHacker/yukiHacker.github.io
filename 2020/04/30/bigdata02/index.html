@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>linux学习 | Yuki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="yuki~">
+  <meta name="keywords" content="">
+  <meta name="description" content="兢兢业业 勤勤恳恳">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.3.9',
+    localsearch:{
+      "enable": false,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'null'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "greenish",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<div class="single">
+
+<div id="page">
+<div id="lx-aside" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/post_cover.jpeg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/yuki.png"></a></div>
+    <span>2020-04-30</span>
+    <h2>linux学习</h2>
+    
+    </div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <p>1、清除屏幕 clear  之前的内容并没有消失，滚动条往上滚还是有的</p>
+<p>2、mv移动  cp复制<br>mv A B/A:表示将A文件夹移动到B下面 (始终一份,速度快)<br>cp -r A B/A:表示复制A到B下面 (是两份,速度慢)</p>
+<p>不标准写法:<br>mv dir1  dir2<br>cp -r dir2 dir3</p>
+<p>标准写法:<br>mv dir1  dir3/dir1<br>cp -r dir2 dir4/dir2</p>
+<p>也是支持修改文件名称:<br>mv  dir2 dir22<br>cp -r dir3 dir33<br>mv dir1  ruozedata/dir111<br>cp -r dir2 ruozedata/dir222</p>
+<p>3、创建文件<br>(1)touch 1.log 空文件 常用<br>(2)vi 2.log  常用<br>默认命令行<br>    i键 编辑模式，进行编辑<br>    esc键 从编辑模式–》命令行模式<br>    shift+:键 从命令行模式–》尾行模式，输入wq 保存退出<br>(3)echo “ruozedata” &gt; 3.log   不常用<br>主要场景是为了  覆盖内容 或者 追加内容 </p>
+<blockquote>
+<p>创建或覆盖    【高危命令1】</p>
+<blockquote>
+<p>追加<br>echo “ruozedata” ：打印一句话”ruozedata” </p>
+</blockquote>
+</blockquote>
+<p>4.查看文件内容 如： log、config、data文件<br>(1)cat xx.log: 文件内容一下子全部显示  ctrl+z 中断<br>适用于：文件内容少的文件<br>(2)more xx.log:文件内容一页页往下翻，按空格往下  回退不了 q退出、<br>适用于：文件内容 稍微多点的文件<br>(3)less xx.log:文件内容 按上下键   q退出<br>(4)tail 实时查看文件最新内容<br>    tail -f xxx.log<br>    tail -F yyy.log  **<br>    注意：-F =-f+ retry  retry 重试的意思</p>
+<p><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong>关于-f和-F的场景<strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong>:<br>采集业务log日志内容 log4j文件<br>规则: 每份100m 保留10份<br>跑系统产生的日志–》 erp.log 90m …100m<br>mv erp.log  erp.log1：（erp.log文件满100m后移动erp.log变成erp.log1，这时候就没有erp.log文件）<br>touch erp.log：新建一个erp.log的空文件</p>
+<pre><code>ll命令查看：11个文件，第12个文件会自动覆盖
+erp.log 
+erp.log1
+erp.log2
+....
+erp.log10</code></pre><p>出现的问题：<br>(1)执行tail -f erp.log的命令，实时监控erp的文件内容，一有追加，就会打印出来，但是移走erp文件后，再touch一个新的erp.log，这时候就不会监控到erp.log文件内容了<br>(2)执行tail -F erp.log的命令，实时监控erp的文件内容，一有追加，就会打印出来，移走erp文件后，会提示“erp.log has become inaccessible:No such file or directory”，再touch一个新的erp.log，会提示“erp.log has appeared;following end of new file”这时候就会从新文件最后一行继续监控erp.log文件内容了</p>
+<p>大数据Flume组件 exec source:  tail -F erp.log</p>
+<hr>
+<p>想要查看文件内容倒数100行,同时实时监控<br>tail -100f   xxx.log<br>tail -100F   xxx.log  错误的 </p>
+<p>文件内容超多  定位ERROR 信息<br>cat xxx.log | grep ERROR   当前行<br>cat xxx.log | grep -A 5 ERROR   后5行<br>cat xxx.log | grep -B 5 ERROR   前5行<br>cat xxx.log | grep -C 5 ERROR   前后各5行<br>| ：管道符 表示前面的结果为后面的输入<br>grep ：过滤 根据error关键字过滤</p>
+<p>比如 xxx.log ERROR 很多  上万个<br>操作：<br>(1)cat xxx.log | grep -C 5 ERROR &gt; 20200418error.log<br>more 20200418error.log<br>(2)文件内容100m以内的太大的不能用这种查询方法(内存加载很慢) :<br>vi xxx.log<br>  进入尾行：shift+:<br>  输入： /<br>  输入ERROR然后回车<br>  按住n键寻找<br>(3)下载到window<br>editplus（window）<br>notepad++  要注意编码格式<br>sublime（widnow  mac）工具 搜索  统计 校验  </p>
+<ol start="5">
+<li>上传下载<br>安装工具包 yum install -y lrzsz<br>sz xxx.log是下载 Linux–》window<br>查看下载的目录：点击IP右键选择属性——ZMODEM—–dowload路径<br>rz 直接回车是上传   window–》Linux</li>
+</ol>
+<p>6.别名 alias<br>[root@ruozedata001 log]# alias<br>alias cp=’cp -i’<br>alias egrep=’egrep –color=auto’<br>alias fgrep=’fgrep –color=auto’<br>alias grep=’grep –color=auto’<br>alias l.=’ls -d .* –color=auto’<br>alias ll=’ls -l –color=auto’<br>alias ls=’ls –color=auto’<br>alias mv=’mv -i’<br>alias rm=’rm -i’<br>alias which=’alias | /usr/bin/which –tty-only –read-alias –show-dot –show-tilde’<br>[root@ruozedata001 log]# </p>
+<hr>
+<p>只在当前会话生效<br>[root@ruozedata001 log]#  alias jj=’cd /tmp’<br>其他会话不生效(重新打开一个窗口执行 报错)<br>[root@ruozedata001 ~]# jj<br>-bash: jj: command not found<br>原因：没有在环境变量文件配置 </p>
+<hr>
+<p>7.环境变量<br>全局 : /etc/profile    所有用户都可以使用  </p>
+<p>个人: ~/.bash_profile   只能是当前用户使用  其他不能使用<br>      ~/.bashrc 【J哥推荐】<br><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong>场景<strong><strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong></strong> ssh 远程执行B机器 命令  找不到   java command not found<br>但是直接登录B机器 命令是找到的   which java有的<br>原因：<br>命令的环境变量配置在.bash_profile  是不正确的。<br>应该配置在.bashrc文件</p>
+<hr>
+<p>生效文件方法:<br>第一种方法：source<br>source /etc/profile<br>source ~/.bash_profile<br>source ~/.bashrc<br>第二种方法：cd 进家目录——-再执行：. .bashrc<br><strong>注意</strong>：生效文件后，一定要重新打开一个会话窗口（向服务器发送一个新的请求），命令才有用</p>
+<p>8.创建用户<br>root ：默认管理员用户 这是一个已存在的用户<br>创建新用户：<br>[root@ruozedata001 tmp]# useradd jepson<br>切换用户<br>[root@ruozedata001 tmp]# su - jepson<br>[jepson@ruozedata001 ~]$ pwd<br>/home/jepson<br>[jepson@ruozedata001 ~]$ jj  是因为jj配置在全局变量文件<br>[jepson@ruozedata001 tmp]$ pwd<br>/tmp<br>[jepson@ruozedata001 tmp]$<br>[jepson@ruozedata001 tmp]$ </p>
+<p>9.自动补全  释放你的手指 节省力量<br>ll m（识别名称含m的文件）—–按tab键一次<br>tab键一次：只匹配到1个 命令自动补全 匹配到多个文件就没有响应了<br>tab键按二次：会把当前匹配到的 所有 打印出来，再挑选</p>
+<p>10.history 历史命令<br>history:显示当前用户的历史命令<br>!2：执行histroy打印出来第二行命令<br>history -c 清空历史—-再执行history就不会打印任何命令了<br>连接服务器的情况：<br>(1)直连服务器:  history -c 清空历史，不会查到输过的命令<br>(2)跳板机(vpn)连接服务器：history -c 清空历史，不会查到输过的命令<br>(3)堡垒机连接服务器：每敲一个命令，都记录到堡垒机系统里，web界面可视化</p>
+<p>11.【高危命令】 rm<br>千万不要做 rm -rf / 一了百了</p>
+<p>[root@ruozedata001 ~]# rm 11.log<br>rm: remove regular file ‘11.log’? y</p>
+<p>[root@ruozedata001 ~]# rm -f 1.log</p>
+<p>[root@ruozedata001 ~]# rm -r dir22<br>rm: remove directory ‘dir22’? y</p>
+<p>[root@ruozedata001 ~]# rm -rf dir33<br>[root@ruozedata001 ~]# </p>
+<p><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong>场景<strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong><br>脚本里<br>LOG_PATH=/xxx/yyy<br>业务逻辑判断 去赋值<br>漏了一种  没有赋值<br>rm -rf ${LOG_PATH}/*  ==》rm -rf /*</p>
+<p>该怎么避免 ：<br>每次删除之前 都判断${LOG_PATH} 是否存在 </p>
+<p>补充:<br>[root@JD ~]# hostnamectl set-hostname ruozedata001</p>
+<p>[root@ruozedata001 ~]# ifconfig 找内网ip 或者 京东云控制台查看<br>[root@ruozedata001 ~]# vi /etc/hosts<br>127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4<br>::1         localhost localhost.localdomain localhost6 localhost6.localdomain6</p>
+<p>192.168.0.3 ruozedata001</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/04/30/bigdata03/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>linux学习</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">Yuki</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button> 
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/yuki.png" alt="yuki~"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>yuki~</p>
+          <span class="tagline">Hello, World!</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>页面</span>
+        <ul>
+          <li><a href="/guestbook/">Guestbook</a></li>
+        <li><a href="/about/">About</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>友链</span>
+        <ul>
+          <li> <a href="https://lx.js.org" target="_blank">Theme-Lx</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+
+
+</body>
+</html>

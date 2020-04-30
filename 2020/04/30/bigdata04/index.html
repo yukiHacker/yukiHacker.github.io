@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>Hello World | Yuki</title>
+  <title>linux学习 | Yuki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="yuki~">
   <meta name="keywords" content="">
@@ -69,8 +69,8 @@
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><a href="/"><img src="/images/yuki.png"></a></div>
-    <span>2020-04-27</span>
-    <h2>Hello World</h2>
+    <span>2020-04-30</span>
+    <h2>linux学习</h2>
     
     </div>
 </div>
@@ -80,19 +80,20 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>1、[root@JD ~]#<br>root：默认管理员，最大权限<br>@：写死的字符<br>JD：机器名称<br>~：当前该用户的’家目录’<br>[]：格式规范<br>#：写死的字符</p>
+<p>2、基础命令<br>(1)pwd：查看当前光标所在的目录/路径—— /root</p>
+<p>(2)mkdir bigData：创建名为’bigData’的文件夹 创建文件后面再讲<br>mkdir dir1 dir2 dir3 ：以空格为分隔，产生并联的三个文件夹<br>mkdir dir4/dir5/dir6：报错<br>mkdir -p dir4/dir5/dir6 ：串 级联创建</p>
+<p>(3)cd：切换目录（目录指的是路径） 只能进入文件夹，不能进入文件<br>如：cd /——– 从[root@JD ~]#变成了 [root@JD /]#<br>(Linux系统是从根目录开始的，根目录标识：/)<br>cd dir1  进入dir1文件夹<br>cd ../ 退上一层目录<br>cd ../../  退2层<br>cd ../../../ 退3层<br>注意：<br>root用户的家目录 ： /root  是根目录下的1号文件夹<br>普通xx用户的家目录 ： /home/xx<br>家目录是用 ~ 表示<br>如何进家目录:cd /root<br>        cd 直接回车<br>        cd ~<br>cd -：回退到上一次的目录</p>
+<p>(4)ls 显示文件夹、 文件名称<br>[root@JD /]# ls——–查看根目录下的文件夹</p>
+<p>(5)ls -l ：显示文件夹/文件的额外信息  权限 用户用户组 时间 大小</p>
+<p>(6)ls -l -a: 也显示隐藏文件夹 文件（隐藏文件夹 文件是以.开头 ）<br>如：<br>[root@ruozedata001 ~]# ls -l -a<br>total 40<br>dr-xr-x—.  6 root root 4096 Apr 15 21:51 .<br>dr-xr-xr-x. 17 root root 4096 Aug  8  2018 ..<br>-rw——-.  1 root root 3814 Apr 15 21:49 .bash_history<br>-rw-r–r–.  1 root root   18 Dec 29  2013 .bash_logout</p>
+<p>(7)ls -l -h： 仅仅查看文件的大小（文件夹的大小也显示，但是不准确）<br>后面会学习查看文件夹的大小</p>
+<p>(8)ls -l -r -t：按时间排序(如何快速找到哪些文件更新了?)</p>
+<p>(9)ls -l 和 ll 等价<br>ll -a<br>ll -rt<br>ll -h</p>
+<p>(10)命令帮助 help<br>如：ls –help  即查看关于ls的命令帮助<br>root@ruozedata001 /]# ls –help<br>Usage: ls [OPTION]… [FILE]…<br>解析：[]标识的  可选<br>          …  多个参数</p>
+<p>Usage: ls [OPTIONS]和Usage: ls [OPTION]… [FILE]… 是一样的意思<br>Usage: ls XXX [OPTIONS] ：xxx必须要写</p>
+<p>List information about the FILEs (the current directory by default).<br>Sort entries alphabetically if none of -cftuvSUX nor –sort is specified.</p>
+<p>Mandatory arguments to long options are mandatory for short options too.<br>  -a, –all                  do not ignore entries starting with .<br>  -A, –almost-all           do not list implied . and ..</p>
 
       </div>
     </div>
@@ -101,12 +102,12 @@
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="#">
+		<a class="copy" href="/2020/04/30/bigdata01/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>No newer post</h3>
+						<h3>linux学习</h3>
 					</div>
 				</div>
 			</div>
@@ -119,7 +120,7 @@
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3>No older post</h3>
+						<h3>没有更早的文章</h3>
 					</div>
 				</div>
 			</div>
@@ -160,18 +161,18 @@
   </div>
   <nav class="menu-container">
   <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
     
     <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
+      <i class="fa fa-bookmark fa-fw"></i>页面</span>
         <ul>
           <li><a href="/guestbook/">Guestbook</a></li>
         <li><a href="/about/">About</a></li>
         </ul>
     </li>
     <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-link fa-fw"></i>Friends</span>
+      <i class="fa fa-link fa-fw"></i>友链</span>
         <ul>
           <li> <a href="https://lx.js.org" target="_blank">Theme-Lx</a></li>
         </ul>

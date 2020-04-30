@@ -1,21 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/27/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>linux学习</title>
+    <url>/2020/04/30/bigdata01/</url>
+    <content><![CDATA[<p>1、[root@JD ~]#<br>root：默认管理员，最大权限<br>@：写死的字符<br>JD：机器名称<br>~：当前该用户的’家目录’<br>[]：格式规范<br>#：写死的字符</p>
+<p>2、基础命令<br>(1)pwd：查看当前光标所在的目录/路径—— /root</p>
+<p>(2)mkdir bigData：创建名为’bigData’的文件夹 创建文件后面再讲<br>mkdir dir1 dir2 dir3 ：以空格为分隔，产生并联的三个文件夹<br>mkdir dir4/dir5/dir6：报错<br>mkdir -p dir4/dir5/dir6 ：串 级联创建</p>
+<p>(3)cd：切换目录（目录指的是路径） 只能进入文件夹，不能进入文件<br>如：cd /——– 从[root@JD ~]#变成了 [root@JD /]#<br>(Linux系统是从根目录开始的，根目录标识：/)<br>cd dir1  进入dir1文件夹<br>cd ../ 退上一层目录<br>cd ../../  退2层<br>cd ../../../ 退3层<br>注意：<br>root用户的家目录 ： /root  是根目录下的1号文件夹<br>普通xx用户的家目录 ： /home/xx<br>家目录是用 ~ 表示<br>如何进家目录:cd /root<br>        cd 直接回车<br>        cd ~<br>cd -：回退到上一次的目录</p>
+<p>(4)ls 显示文件夹、 文件名称<br>[root@JD /]# ls——–查看根目录下的文件夹</p>
+<p>(5)ls -l ：显示文件夹/文件的额外信息  权限 用户用户组 时间 大小</p>
+<p>(6)ls -l -a: 也显示隐藏文件夹 文件（隐藏文件夹 文件是以.开头 ）<br>如：<br>[root@ruozedata001 ~]# ls -l -a<br>total 40<br>dr-xr-x—.  6 root root 4096 Apr 15 21:51 .<br>dr-xr-xr-x. 17 root root 4096 Aug  8  2018 ..<br>-rw——-.  1 root root 3814 Apr 15 21:49 .bash_history<br>-rw-r–r–.  1 root root   18 Dec 29  2013 .bash_logout</p>
+<p>(7)ls -l -h： 仅仅查看文件的大小（文件夹的大小也显示，但是不准确）<br>后面会学习查看文件夹的大小</p>
+<p>(8)ls -l -r -t：按时间排序(如何快速找到哪些文件更新了?)</p>
+<p>(9)ls -l 和 ll 等价<br>ll -a<br>ll -rt<br>ll -h</p>
+<p>(10)命令帮助 help<br>如：ls –help  即查看关于ls的命令帮助<br>root@ruozedata001 /]# ls –help<br>Usage: ls [OPTION]… [FILE]…<br>解析：[]标识的  可选<br>          …  多个参数</p>
+<p>Usage: ls [OPTIONS]和Usage: ls [OPTION]… [FILE]… 是一样的意思<br>Usage: ls XXX [OPTIONS] ：xxx必须要写</p>
+<p>List information about the FILEs (the current directory by default).<br>Sort entries alphabetically if none of -cftuvSUX nor –sort is specified.</p>
+<p>Mandatory arguments to long options are mandatory for short options too.<br>  -a, –all                  do not ignore entries starting with .<br>  -A, –almost-all           do not list implied . and ..</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>linux学习</title>
+    <url>/2020/04/30/bigdata02/</url>
+    <content><![CDATA[<p>1、清除屏幕 clear  之前的内容并没有消失，滚动条往上滚还是有的</p>
+<p>2、mv移动  cp复制<br>mv A B/A:表示将A文件夹移动到B下面 (始终一份,速度快)<br>cp -r A B/A:表示复制A到B下面 (是两份,速度慢)</p>
+<p>不标准写法:<br>mv dir1  dir2<br>cp -r dir2 dir3</p>
+<p>标准写法:<br>mv dir1  dir3/dir1<br>cp -r dir2 dir4/dir2</p>
+<p>也是支持修改文件名称:<br>mv  dir2 dir22<br>cp -r dir3 dir33<br>mv dir1  ruozedata/dir111<br>cp -r dir2 ruozedata/dir222</p>
+<p>3、创建文件<br>(1)touch 1.log 空文件 常用<br>(2)vi 2.log  常用<br>默认命令行<br>    i键 编辑模式，进行编辑<br>    esc键 从编辑模式–》命令行模式<br>    shift+:键 从命令行模式–》尾行模式，输入wq 保存退出<br>(3)echo “ruozedata” &gt; 3.log   不常用<br>主要场景是为了  覆盖内容 或者 追加内容 </p>
+<blockquote>
+<p>创建或覆盖    【高危命令1】</p>
+<blockquote>
+<p>追加<br>echo “ruozedata” ：打印一句话”ruozedata” </p>
+</blockquote>
+</blockquote>
+<p>4.查看文件内容 如： log、config、data文件<br>(1)cat xx.log: 文件内容一下子全部显示  ctrl+z 中断<br>适用于：文件内容少的文件<br>(2)more xx.log:文件内容一页页往下翻，按空格往下  回退不了 q退出、<br>适用于：文件内容 稍微多点的文件<br>(3)less xx.log:文件内容 按上下键   q退出<br>(4)tail 实时查看文件最新内容<br>    tail -f xxx.log<br>    tail -F yyy.log  **<br>    注意：-F =-f+ retry  retry 重试的意思</p>
+<p><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong>关于-f和-F的场景<strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong>:<br>采集业务log日志内容 log4j文件<br>规则: 每份100m 保留10份<br>跑系统产生的日志–》 erp.log 90m …100m<br>mv erp.log  erp.log1：（erp.log文件满100m后移动erp.log变成erp.log1，这时候就没有erp.log文件）<br>touch erp.log：新建一个erp.log的空文件</p>
+<pre><code>ll命令查看：11个文件，第12个文件会自动覆盖
+erp.log 
+erp.log1
+erp.log2
+....
+erp.log10</code></pre><p>出现的问题：<br>(1)执行tail -f erp.log的命令，实时监控erp的文件内容，一有追加，就会打印出来，但是移走erp文件后，再touch一个新的erp.log，这时候就不会监控到erp.log文件内容了<br>(2)执行tail -F erp.log的命令，实时监控erp的文件内容，一有追加，就会打印出来，移走erp文件后，会提示“erp.log has become inaccessible:No such file or directory”，再touch一个新的erp.log，会提示“erp.log has appeared;following end of new file”这时候就会从新文件最后一行继续监控erp.log文件内容了</p>
+<p>大数据Flume组件 exec source:  tail -F erp.log</p>
+<hr>
+<p>想要查看文件内容倒数100行,同时实时监控<br>tail -100f   xxx.log<br>tail -100F   xxx.log  错误的 </p>
+<p>文件内容超多  定位ERROR 信息<br>cat xxx.log | grep ERROR   当前行<br>cat xxx.log | grep -A 5 ERROR   后5行<br>cat xxx.log | grep -B 5 ERROR   前5行<br>cat xxx.log | grep -C 5 ERROR   前后各5行<br>| ：管道符 表示前面的结果为后面的输入<br>grep ：过滤 根据error关键字过滤</p>
+<p>比如 xxx.log ERROR 很多  上万个<br>操作：<br>(1)cat xxx.log | grep -C 5 ERROR &gt; 20200418error.log<br>more 20200418error.log<br>(2)文件内容100m以内的太大的不能用这种查询方法(内存加载很慢) :<br>vi xxx.log<br>  进入尾行：shift+:<br>  输入： /<br>  输入ERROR然后回车<br>  按住n键寻找<br>(3)下载到window<br>editplus（window）<br>notepad++  要注意编码格式<br>sublime（widnow  mac）工具 搜索  统计 校验  </p>
+<ol start="5">
+<li>上传下载<br>安装工具包 yum install -y lrzsz<br>sz xxx.log是下载 Linux–》window<br>查看下载的目录：点击IP右键选择属性——ZMODEM—–dowload路径<br>rz 直接回车是上传   window–》Linux</li>
+</ol>
+<p>6.别名 alias<br>[root@ruozedata001 log]# alias<br>alias cp=’cp -i’<br>alias egrep=’egrep –color=auto’<br>alias fgrep=’fgrep –color=auto’<br>alias grep=’grep –color=auto’<br>alias l.=’ls -d .* –color=auto’<br>alias ll=’ls -l –color=auto’<br>alias ls=’ls –color=auto’<br>alias mv=’mv -i’<br>alias rm=’rm -i’<br>alias which=’alias | /usr/bin/which –tty-only –read-alias –show-dot –show-tilde’<br>[root@ruozedata001 log]# </p>
+<hr>
+<p>只在当前会话生效<br>[root@ruozedata001 log]#  alias jj=’cd /tmp’<br>其他会话不生效(重新打开一个窗口执行 报错)<br>[root@ruozedata001 ~]# jj<br>-bash: jj: command not found<br>原因：没有在环境变量文件配置 </p>
+<hr>
+<p>7.环境变量<br>全局 : /etc/profile    所有用户都可以使用  </p>
+<p>个人: ~/.bash_profile   只能是当前用户使用  其他不能使用<br>      ~/.bashrc 【J哥推荐】<br><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong>场景<strong><strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong></strong> ssh 远程执行B机器 命令  找不到   java command not found<br>但是直接登录B机器 命令是找到的   which java有的<br>原因：<br>命令的环境变量配置在.bash_profile  是不正确的。<br>应该配置在.bashrc文件</p>
+<hr>
+<p>生效文件方法:<br>第一种方法：source<br>source /etc/profile<br>source ~/.bash_profile<br>source ~/.bashrc<br>第二种方法：cd 进家目录——-再执行：. .bashrc<br><strong>注意</strong>：生效文件后，一定要重新打开一个会话窗口（向服务器发送一个新的请求），命令才有用</p>
+<p>8.创建用户<br>root ：默认管理员用户 这是一个已存在的用户<br>创建新用户：<br>[root@ruozedata001 tmp]# useradd jepson<br>切换用户<br>[root@ruozedata001 tmp]# su - jepson<br>[jepson@ruozedata001 ~]$ pwd<br>/home/jepson<br>[jepson@ruozedata001 ~]$ jj  是因为jj配置在全局变量文件<br>[jepson@ruozedata001 tmp]$ pwd<br>/tmp<br>[jepson@ruozedata001 tmp]$<br>[jepson@ruozedata001 tmp]$ </p>
+<p>9.自动补全  释放你的手指 节省力量<br>ll m（识别名称含m的文件）—–按tab键一次<br>tab键一次：只匹配到1个 命令自动补全 匹配到多个文件就没有响应了<br>tab键按二次：会把当前匹配到的 所有 打印出来，再挑选</p>
+<p>10.history 历史命令<br>history:显示当前用户的历史命令<br>!2：执行histroy打印出来第二行命令<br>history -c 清空历史—-再执行history就不会打印任何命令了<br>连接服务器的情况：<br>(1)直连服务器:  history -c 清空历史，不会查到输过的命令<br>(2)跳板机(vpn)连接服务器：history -c 清空历史，不会查到输过的命令<br>(3)堡垒机连接服务器：每敲一个命令，都记录到堡垒机系统里，web界面可视化</p>
+<p>11.【高危命令】 rm<br>千万不要做 rm -rf / 一了百了</p>
+<p>[root@ruozedata001 ~]# rm 11.log<br>rm: remove regular file ‘11.log’? y</p>
+<p>[root@ruozedata001 ~]# rm -f 1.log</p>
+<p>[root@ruozedata001 ~]# rm -r dir22<br>rm: remove directory ‘dir22’? y</p>
+<p>[root@ruozedata001 ~]# rm -rf dir33<br>[root@ruozedata001 ~]# </p>
+<p><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong>场景<strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong><br>脚本里<br>LOG_PATH=/xxx/yyy<br>业务逻辑判断 去赋值<br>漏了一种  没有赋值<br>rm -rf ${LOG_PATH}/*  ==》rm -rf /*</p>
+<p>该怎么避免 ：<br>每次删除之前 都判断${LOG_PATH} 是否存在 </p>
+<p>补充:<br>[root@JD ~]# hostnamectl set-hostname ruozedata001</p>
+<p>[root@ruozedata001 ~]# ifconfig 找内网ip 或者 京东云控制台查看<br>[root@ruozedata001 ~]# vi /etc/hosts<br>127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4<br>::1         localhost localhost.localdomain localhost6 localhost6.localdomain6</p>
+<p>192.168.0.3 ruozedata001</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>linux学习</title>
+    <url>/2020/04/30/bigdata03/</url>
+    <content><![CDATA[<p>1.用户 用户组<br>(1)用户常用命令<br>[root@ruozedata001 ~]# ll /usr/sbin/user*<br>-rwxr-x— 1 root root 118192 Nov  6  2016 /usr/sbin/useradd<br>-rwxr-x— 1 root root  80360 Nov  6  2016 /usr/sbin/userdel<br>-rwxr-x— 1 root root 113840 Nov  6  2016 /usr/sbin/usermod<br>-rwsr-xr-x 1 root root  11296 Apr 13  2017 /usr/sbin/usernetctl</p>
+<p>(2)用户组常用命令<br>[root@ruozedata001 ~]# ll /usr/sbin/group*<br>-rwxr-x— 1 root root 65480 Nov  6  2016 /usr/sbin/groupadd<br>-rwxr-x— 1 root root 57016 Nov  6  2016 /usr/sbin/groupdel<br>-rwxr-x— 1 root root 57064 Nov  6  2016 /usr/sbin/groupmems 用户组成员<br>-rwxr-x— 1 root root 76424 Nov  6  2016 /usr/sbin/groupmod</p>
+<p>(3)创建一个普通用户  用户名称 ruoze<br>同时也会创建一个 ruoze用户组<br>设置ruoze用户的组为ruoze,且把这个ruoze用户组设置为 主组<br>同时也创建家目录  /home/ruoze </p>
+<p>[root@ruozedata001 ~]# useradd ruoze<br>[root@ruozedata001 ~]# id ruoze<br>uid=1004(ruoze) gid=1004(ruoze) groups=1004(ruoze)<br>[root@ruozedata001 ~]# ll /home<br>drwx——   2 ruoze  ruoze    59 Apr 19 20:10 ruoze</p>
+<p>用户的存储信息记录在： /etc/passwd  (查看cat   /etc/passwd)<br>用户组的存储信息记录在： /etc/group</p>
+<p><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong>场景<strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong>:<br>(1)先删除用户，再创建一个同名用户<br>[root@ruozedata001 ~]# userdel ruoze<br>[root@ruozedata001 ~]# useradd ruoze  （重要的是演示以下的提示）<br>useradd: warning: the home directory already exists.<br>Not copying any file from skel directory into it.<br>Creating mailbox file: File exists</p>
+<p>(2)这种情况下切换成ruoze用户样式会丢失：<br>因为没有了.bashrc和.bash_profile这两个目录<br>[root@ruozedata001 ~]# su - ruoze<br>Last login: Sun Apr 19 20:16:54 CST 2020 on pts/0</p>
+<p>[ruoze@ruozedata001 ~]$ ll -a<br>total 16<br>drwx——  2 ruoze ruoze  79 Apr 19 20:16 .<br>drwxr-xr-x. 7 root  root   67 Apr 19 20:10 ..<br>-rw——-  1 ruoze ruoze  28 Apr 19 20:17 .bash_history<br>-rw-r–r–  1 ruoze ruoze  18 Apr 11  2018 .bash_logout<br>-rw-r–r–  1 ruoze ruoze 193 Apr 11  2018 .bash_profile<br>-rw-r–r–  1 ruoze ruoze 231 Apr 11  2018 .bashrc<br>[ruoze@ruozedata001 ~]$ rm -rf .bash*</p>
+<p>[ruoze@ruozedata001 ~]$ ll -a<br>total 0<br>drwx——  2 ruoze ruoze  6 Apr 19 20:17 .<br>drwxr-xr-x. 7 root  root  67 Apr 19 20:10 ..<br>[ruoze@ruozedata001 ~]$<br>[ruoze@ruozedata001 ~]$<br>[ruoze@ruozedata001 ~]$ exit<br>logout</p>
+<p>[root@ruozedata001 ~]# su - ruoze<br>Last login: Sun Apr 19 20:17:08 CST 2020 on pts/0<br>-bash-4.2$<br>-bash-4.2$<br>-bash-4.2$<br>-bash-4.2$ id<br>uid=1004(ruoze) gid=1004(ruoze) groups=1004(ruoze)<br>-bash-4.2$ </p>
+<p>(3)复制样式文件<br>-bash-4.2$ cp /etc/skel/.* ./   这个需要敲一下看看<br>cp: omitting directory ‘/etc/skel/.’<br>cp: omitting directory ‘/etc/skel/..’<br>-bash-4.2$ ll -a<br>total 16<br>drwx——  2 ruoze ruoze  79 Apr 19 20:20 .<br>drwxr-xr-x. 7 root  root   67 Apr 19 20:10 ..<br>-rw——-  1 ruoze ruoze  39 Apr 19 20:18 .bash_history<br>-rw-r–r–  1 ruoze ruoze  18 Apr 19 20:20 .bash_logout<br>-rw-r–r–  1 ruoze ruoze 193 Apr 19 20:20 .bash_profile<br>-rw-r–r–  1 ruoze ruoze 231 Apr 19 20:20 .bashrc<br>-bash-4.2$ </p>
+<p>(4)退出重新切换成ruoze用户，则样式恢复<br>-bash-4.2$<br>-bash-4.2$ exit<br>logout<br>[root@ruozedata001 ~]# su - ruoze<br>Last login: Sun Apr 19 20:18:56 CST 2020 on pts/0<br>[ruoze@ruozedata001 ~]$<br>[ruoze@ruozedata001 ~]$<br>[ruoze@ruozedata001 ~]$ </p>
+<hr>
+<p>(4)添加用户到bigdata用户组<br>创建新的用户组<br>[root@ruozedata001 ~]# groupadd bigdata<br>给ruoze用户增加一个用户组<br>[root@ruozedata001 ~]# usermod    -a -G bigdata      ruoze<br>查看ruoze用户的信息<br>[root@ruozedata001 ~]# id ruoze<br>uid=1004(ruoze) gid=1004(ruoze) groups=1004(ruoze),1005(bigdata)<br>给ruoze用户设置主组为bigdata<strong>****</strong>(但是会丢失ruoze组)<strong>***</strong><br>[root@ruozedata001 ~]# usermod -g bigdata ruoze<br>查看ruoze用户的信息<br>[root@ruozedata001 ~]# id ruoze<br>uid=1004(ruoze) gid=1005(bigdata) groups=1005(bigdata)<br>再给ruoze用户增加一个ruoze组<br>[root@ruozedata001 ~]# usermod    -a -G ruoze      ruoze<br>查看ruoze用户的信息<br>[root@ruozedata001 ~]# id ruoze<br>uid=1004(ruoze) gid=1005(bigdata) groups=1005(bigdata),1004(ruoze)</p>
+<p>2.设置密码passwd<br>如果passwd后面不跟用户，则修改的是当前用户的密码<br>[root@ruozedata001 ~]# passwd<br>Changing password for user root.<br>New password:<br>修改ruoze用户的密码：passwd ruoze<br>[root@ruozedata001 ~]# passwd ruoze<br>Changing password for user ruoze.<br>New password:<br>BAD PASSWORD: The password is shorter than 8 characters<br>Retype new password:<br>passwd: all authentication tokens updated successfully.<br>[root@ruozedata001 ~]# </p>
+<p>3.切换用户<br>su ruoze<br>su - ruoze 【J哥推荐】代表该用户切换到家目录，且执行环境变量文件<br>[root@ruozedata001 ~]# pwd<br>/root<br>差别<br>[root@ruozedata001 ~]# su ruoze<br>[ruoze@ruozedata001 root]$ pwd<br>/root<br>[ruoze@ruozedata001 root]$ exit<br>exit<br>差别<br>[root@ruozedata001 ~]# su - ruoze<br>Last login: Sun Apr 19 20:33:23 CST 2020 on pts/2<br>[ruoze@ruozedata001 ~]$ pwd<br>/home/ruoze<br>[ruoze@ruozedata001 ~]$ </p>
+<p>4.sudo  普通用户临时使用root的最大权限<br>需要配置/etc/sudoers文件：<br>切换成root用户：vi /etc/sudoers<br>ruoze   ALL=(root)      NOPASSWD:ALL<br>:wq! 强制保存退出文件<br>没有配置sudo是没有用的</p>
+<p>[ruoze@ruozedata001 ~]$ cat /root/rz.log<br>cat: /root/rz.log: Permission denied<br>[ruoze@ruozedata001 ~]$ sudo cat /root/rz.log<br><a href="http://www.ruozedata.com" target="_blank" rel="noopener">www.ruozedata.com</a><br>运维一般不会给root用户，要求他给我这个用户加个sudo的权限<br>有root密码就自己加</p>
+<p>5./etc/passwd文件<br>(ruoze用户—exit—-变成了root用户—su - ruoze)</p>
+<p>(1)/etc/passwd文件中ruoze用户配置为：ruoze:x:1004:1005::/home/ruoze:/sbin/nologin<br>则：提示<br>Last login:Sun Apr…<br>This account is curently not available.</p>
+<p>(2)/etc/passwd文件中ruoze用户配置为：<br>ruoze:x:1004:1005::/home/ruoze:/usr/bin/false<br>则：没提示 </p>
+<p><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong>例子<strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong><br>CDH平台  hdfs yarn hive hbase<br>su - yarn 不成功的<br>解决方法：/sbin/nologin /usr/bin/false ===》/bin/bash</p>
+<hr>
+<p>命令which false  ?啥命令</p>
+<p>6.权限<br>服务断开解决：<br>服务器ip—右击选择属性—选择term—sendxxxnoop勾选每隔60s的探活 保存</p>
+<p>[root@ruozedata001 ~]# ll<br>-rw-r–r– 1 root root  9 Apr 18 20:50 22.log<br>drwxr-xr-x 2 root root  6 Apr 15 22:12 dir3<br>第一个字母：d：文件夹   -：文件   l：连接<br>后面9个字母,3个字母为一组:<br>rw- r– r–</p>
+<p>r: read  读权限 4<br>w: write 写权限 2<br>x: 执行         1<br>-: 没权限       0  占位 </p>
+<p>7=4 2 1<br>5=4 1<br>6=4 2</p>
+<p>rw- 第一组 6  代表文件或文件夹的所属用户，读写权限<br>r– 第二组 4  代表文件或文件夹的所属用户组，读权限<br>r– 第三组 4  代表其他用户组的用户对这个文件或文件夹，读权限</p>
+<p>rw-r–r–    root root     22.log</p>
+<p>关于权限：<br>进入temp文件夹，权限是最大的<br>修改文件或文件夹权限：<br>chmod -R 777          文件或文件夹<br>回收权限<br>chown -R 用户:用户组  文件或文件夹<br>-R是针对文件夹的</p>
+<p>3=2+1 w x</p>
+<p>r-x</p>
+<p>案例:<br>[root@ruozedata001 tmp]# vi ruoze.log<br><a href="http://www.ruozedata.com" target="_blank" rel="noopener">www.ruozedata.com</a></p>
+<p>[ruoze@ruozedata001 tmp]$ cat  ruoze.log<br><a href="http://www.ruozedata.com" target="_blank" rel="noopener">www.ruozedata.com</a><br>[ruoze@ruozedata001 tmp]$ </p>
+<p>收回其他组的r权限<br>[root@ruozedata001 tmp]# chmod 640 ruoze.log<br>[ruoze@ruozedata001 tmp]$ cat  ruoze.log<br>cat: ruoze.log: Permission denied</p>
+<p>7.大小<br>文件： ll -h 、du -sh<br>文件夹:        du -sh</p>
+<p>8.搜索 find<br>接手大数据平台，服务器登录，大数据组件安装目录在哪？</p>
+<p>find / -name ‘<em>hadoop</em>‘<br>find /home/hadoop/ -name ‘<em>hadoop</em>‘</p>
+<p>补充:<br>history 命令<br>ps -ef 查看进程</p>
+<p>9.vi命令<br>(1)正常编辑一个文件，要正常退出 wq<br>反之非正常退出（会产生一个文件，导致后面每次编辑都会报错<br>Found a swap file by …….）:<br>-rw-r–r–   1 root  root       16 Apr 19 21:26 2.log<br>-rw-r–r–   1 root  root    12288 Apr 19 21:31 .2.log.swp<br>所以要删除.2.log.swp这个文件，编辑就不会报错了：<br>rm -rf .2.log.swp</p>
+<p>(2)粘贴的坑，必须进入编辑模式，否则第一行内容会丢失部分 不完整<br>场景：拷贝内容到linux上，如果是insert模式下</p>
+<p>(3) 搜索<br>尾行输入<br>:/error</p>
+<p>(4)行号<br>尾行输入<br>:set nu   设置行号<br>:set nonu 取消行号<br>       f 也是可以显示 当前光标的所在的行</p>
+<p>(5)常用快捷方式<br>dd 删除当前行<br>dG 删除当前及以下所有行<br>ndd 删除当前及以下n行</p>
+<p>gg 跳转到第一行的第一个字母<br>G  跳转到最后一行的第一个字母<br>shift+$ 行尾 </p>
+<p><strong><strong><strong><strong>****</strong></strong></strong></strong>场景<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>：<br>清空这个文件内容，从另外一个文件内容 拷贝过来<br>(1)跳到第一行第一个字母：gg<br>(2)删除当前及以下所有行：dG<br>(3)i：进入编辑模式(很重要)<br>(4)鼠标右键单击 粘贴上<br>(5)wq 保存</p>
+<hr>
+<p>清空文件的方式：<br>(1)gg—–dG<br>(2)cat /dev/null &gt; 1.log——-正确  变成0字节<br>    (cat 2.log——-没有任何输出)<br>(3)echo  “” &gt; 2.log————错误  文件字节&gt;0<br>    (cat 2.log—-会输出一行空白行)<br>(4)true &gt; 1.log 也是清空文件内容 0字节<br>例子：<br>[root@ruozedata001 ~]# ll<br>total 16<br>-rw-r–r– 1 root  root     0 Apr 19 21:58 1.log<br>-rw-r–r– 1 root  root     1 Apr 19 21:58 2.log</p>
+<p><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong>场景<strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong>:<br>shell脚本，数据文件清空操作，根据字节大小判断是否清空完成</p>
+<p>执行命令：echo  “” &gt; 2.log<br>脚本中的判断：<br>if filezie &gt; 0 then<br>   业务不操作<br>else<br>    2.log 灌业务数据<br>结果：永远只执行第一个判断</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>linux学习</title>
+    <url>/2020/04/30/bigdata04/</url>
+    <content><![CDATA[<p>1、[root@JD ~]#<br>root：默认管理员，最大权限<br>@：写死的字符<br>JD：机器名称<br>~：当前该用户的’家目录’<br>[]：格式规范<br>#：写死的字符</p>
+<p>2、基础命令<br>(1)pwd：查看当前光标所在的目录/路径—— /root</p>
+<p>(2)mkdir bigData：创建名为’bigData’的文件夹 创建文件后面再讲<br>mkdir dir1 dir2 dir3 ：以空格为分隔，产生并联的三个文件夹<br>mkdir dir4/dir5/dir6：报错<br>mkdir -p dir4/dir5/dir6 ：串 级联创建</p>
+<p>(3)cd：切换目录（目录指的是路径） 只能进入文件夹，不能进入文件<br>如：cd /——– 从[root@JD ~]#变成了 [root@JD /]#<br>(Linux系统是从根目录开始的，根目录标识：/)<br>cd dir1  进入dir1文件夹<br>cd ../ 退上一层目录<br>cd ../../  退2层<br>cd ../../../ 退3层<br>注意：<br>root用户的家目录 ： /root  是根目录下的1号文件夹<br>普通xx用户的家目录 ： /home/xx<br>家目录是用 ~ 表示<br>如何进家目录:cd /root<br>        cd 直接回车<br>        cd ~<br>cd -：回退到上一次的目录</p>
+<p>(4)ls 显示文件夹、 文件名称<br>[root@JD /]# ls——–查看根目录下的文件夹</p>
+<p>(5)ls -l ：显示文件夹/文件的额外信息  权限 用户用户组 时间 大小</p>
+<p>(6)ls -l -a: 也显示隐藏文件夹 文件（隐藏文件夹 文件是以.开头 ）<br>如：<br>[root@ruozedata001 ~]# ls -l -a<br>total 40<br>dr-xr-x—.  6 root root 4096 Apr 15 21:51 .<br>dr-xr-xr-x. 17 root root 4096 Aug  8  2018 ..<br>-rw——-.  1 root root 3814 Apr 15 21:49 .bash_history<br>-rw-r–r–.  1 root root   18 Dec 29  2013 .bash_logout</p>
+<p>(7)ls -l -h： 仅仅查看文件的大小（文件夹的大小也显示，但是不准确）<br>后面会学习查看文件夹的大小</p>
+<p>(8)ls -l -r -t：按时间排序(如何快速找到哪些文件更新了?)</p>
+<p>(9)ls -l 和 ll 等价<br>ll -a<br>ll -rt<br>ll -h</p>
+<p>(10)命令帮助 help<br>如：ls –help  即查看关于ls的命令帮助<br>root@ruozedata001 /]# ls –help<br>Usage: ls [OPTION]… [FILE]…<br>解析：[]标识的  可选<br>          …  多个参数</p>
+<p>Usage: ls [OPTIONS]和Usage: ls [OPTION]… [FILE]… 是一样的意思<br>Usage: ls XXX [OPTIONS] ：xxx必须要写</p>
+<p>List information about the FILEs (the current directory by default).<br>Sort entries alphabetically if none of -cftuvSUX nor –sort is specified.</p>
+<p>Mandatory arguments to long options are mandatory for short options too.<br>  -a, –all                  do not ignore entries starting with .<br>  -A, –almost-all           do not list implied . and ..</p>
 ]]></content>
   </entry>
 </search>
